@@ -18,7 +18,7 @@ function Simulation() {
     const [steps, setSteps] = useState([]);
     const [currentStep, setCurrentStep] = useState(0);
     const [isPlaying, setIsPlaying] = useState(false);
-    const [speed, setSpeed] = useState(500);
+    const speed = 1000; // Fixed slow speed
     const [loading, setLoading] = useState(false);
     const [highlightedCell, setHighlightedCell] = useState(null);
     const [currentSolution, setCurrentSolution] = useState(0);
@@ -82,7 +82,7 @@ function Simulation() {
                 clearInterval(intervalRef.current);
             }
         };
-    }, [isPlaying, speed, steps.length, canShowMultipleSolutions, currentSolution, totalSolutions]);
+    }, [isPlaying, steps.length, canShowMultipleSolutions, currentSolution, totalSolutions]);
 
     useEffect(() => {
         if (steps[currentStep]) {
@@ -183,21 +183,6 @@ function Simulation() {
                         {[4, 5, 6, 7, 8].map(num => (
                             <option key={num} value={num}>{num} × {num}</option>
                         ))}
-                    </select>
-                </div>
-
-                <div className="select-wrapper">
-                    <label htmlFor="speed-select">Speed:</label>
-                    <select
-                        id="speed-select"
-                        className="select"
-                        value={speed}
-                        onChange={(e) => setSpeed(Number(e.target.value))}
-                    >
-                        <option value={1000}>Slow</option>
-                        <option value={500}>Normal</option>
-                        <option value={200}>Fast</option>
-                        <option value={50}>Very Fast</option>
                     </select>
                 </div>
 
