@@ -1,0 +1,116 @@
+.home {
+    padding: var(--space-xl) 0;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: var(--space-2xl) var(--space-lg);
+    border-bottom: 1px solid var(--border-light);
+}
+
+.hero h1 {
+    font-size: var(--font-size-3xl);
+    margin-bottom: var(--space-md);
+    letter-spacing: -1px;
+}
+
+.hero-subtitle {
+    font-size: var(--font-size-lg);
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Mode Cards */
+.modes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-lg);
+    padding: var(--space-2xl) var(--space-lg);
+}
+
+.mode-card {
+    background-color: var(--bg-secondary);
+    border: 2px solid var(--border-light);
+    padding: var(--space-xl);
+    text-align: center;
+    transition: all var(--transition-normal);
+}
+
+.mode-card:hover {
+    border-color: var(--border-color);
+    transform: translateY(-2px);
+}
+
+.mode-icon {
+    font-size: 3rem;
+    margin-bottom: var(--space-md);
+}
+
+.mode-card h2 {
+    margin-bottom: var(--space-md);
+}
+
+.mode-card p {
+    margin-bottom: var(--space-lg);
+    line-height: 1.7;
+}
+
+/* About Section */
+.about {
+    padding: var(--space-2xl) var(--space-lg);
+    border-top: 1px solid var(--border-light);
+}
+
+.about h2 {
+    text-align: center;
+    margin-bottom: var(--space-xl);
+}
+
+.about-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.about-content p {
+    margin-bottom: var(--space-md);
+    line-height: 1.8;
+}
+
+.about-facts {
+    display: flex;
+    justify-content: space-around;
+    margin-top: var(--space-xl);
+    padding-top: var(--space-xl);
+    border-top: 1px solid var(--border-light);
+}
+
+.fact {
+    text-align: center;
+}
+
+.fact-number {
+    display: block;
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.fact-label {
+    font-size: var(--font-size-sm);
+    color: var(--text-muted);
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+    .modes {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: var(--font-size-2xl);
+    }
+}
