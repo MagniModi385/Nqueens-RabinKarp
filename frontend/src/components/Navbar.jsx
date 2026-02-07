@@ -3,14 +3,15 @@ import './Navbar.css';
 
 function Navbar() {
     const location = useLocation();
+    const isRabinKarp = location.pathname === '/rabinkarp';
 
     const isActive = (path) => location.pathname === path;
 
     return (
-        <nav className="navbar">
+        <nav className={`navbar ${isRabinKarp ? 'navbar-dark' : ''}`}>
             <div className="navbar-container">
                 <Link to="/" className="navbar-logo">
-                    N Queens
+                    Algorithm Visualizer
                 </Link>
                 <div className="navbar-links">
                     <Link
@@ -23,13 +24,19 @@ function Navbar() {
                         to="/play"
                         className={`navbar-link ${isActive('/play') ? 'active' : ''}`}
                     >
-                        Play
+                        N-Queens
                     </Link>
                     <Link
                         to="/simulation"
                         className={`navbar-link ${isActive('/simulation') ? 'active' : ''}`}
                     >
                         Simulation
+                    </Link>
+                    <Link
+                        to="/rabinkarp"
+                        className={`navbar-link ${isActive('/rabinkarp') ? 'active' : ''}`}
+                    >
+                        Rabin-Karp
                     </Link>
                 </div>
             </div>

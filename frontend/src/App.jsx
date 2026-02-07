@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Play from './pages/Play';
 import Simulation from './pages/Simulation';
+import RabinKarp from './pages/RabinKarp';
 import './App.css';
 
 function App() {
@@ -15,9 +16,9 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/play" element={<Play />} />
             <Route path="/simulation" element={<Simulation />} />
+            <Route path="/rabinkarp" element={<RabinKarp />} />
           </Routes>
         </main>
-
       </div>
     </Router>
   );

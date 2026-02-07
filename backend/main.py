@@ -6,9 +6,10 @@ from nqueens import (
     HintRequest, HintResponse, get_hint,
     SolutionCountRequest, SolutionCountResponse, get_solution_count
 )
+from rabinkarp import RKSearchRequest, RKSearchResponse, search_rabin_karp
 
 app = FastAPI(
-    title="N Queens Educational Game API",
+    title="Algorithm Visualizer API",
     version="1.0.0"
 )
 
@@ -24,7 +25,7 @@ app.add_middleware(
 
 @app.get("/")
 def root():
-    return {"message": "N Queens Educational Game API"}
+    return {"message": "Algorithm Visualizer API"}
 
 
 @app.get("/health")
@@ -54,3 +55,10 @@ def api_get_hint(request: HintRequest):
 def api_get_solution_count(request: SolutionCountRequest):
     """Get the total number of solutions for a given N."""
     return get_solution_count(request)
+
+
+@app.post("/api/rabinkarp/search", response_model=RKSearchResponse)
+def api_rabin_karp_search(request: RKSearchRequest):
+    """Perform Rabin-Karp search with visualization steps."""
+    return search_rabin_karp(request)
+

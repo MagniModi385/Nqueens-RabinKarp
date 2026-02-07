@@ -46,3 +46,26 @@
     color: var(--text-primary);
     border-bottom-color: var(--text-primary);
 }
+
+/* Dark mode for Rabin-Karp page */
+.navbar-dark {
+    background-color: #1a1a1a;
+    border-bottom-color: #3a3a3a;
+}
+
+.navbar-dark .navbar-logo {
+    color: #f0f0f0;
+}
+
+.navbar-dark .navbar-link {
+    color: #b0b0b0;
+}
+
+.navbar-dark .navbar-link:hover {
+    color: #f0f0f0;
+}
+
+.navbar-dark .navbar-link.active {
+    color: #f0f0f0;
+    border-bottom-color: #f0f0f0;
+}
